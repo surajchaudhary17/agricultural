@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Nutrient Comparison</title>
+</head>
+<style>
+    ul{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <h1>Crop Nutrient Comparison</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="condition">Select a condition:</label>
+        <select name="condition" id="condition">
+            {% for condition in conditions %}
+                <option value="{{ condition }}">{{ condition }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if selected_condition %}
+        <h2>Crops requiring more than average {{ selected_condition }}:</h2>
+        <ul>
+            {% for crop in crops_greater %}
+            {{ crop }} ,
+            {% endfor %}
+        </ul>
+
+        <h2>Crops requiring less than average {{ selected_condition }}:</h2>
+        <ul>
+            {% for crop in crops_less %}
+            {{ crop }} ,
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

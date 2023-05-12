@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Crop prediction model</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="practice6.css" /> -->
+    <link rel="stylesheet" href="{% static 'css/practice6.css' %}">
+    <style>head{
+      background-color: rgb(7, 7, 7);
+    }
+      </style>
+  </head>
+  <body>
+    <header class="para" id="myHeader">
+      <ul>
+        <li>Home</li>
+        <li>Status</li>
+        <li>Code</li>
+        <li>Compete</li>
+        <li>Search</li>
+        <input type="search" name="search" id="searchbar" placeholder="  Search here.."> 
+      </ul> 
+       
+    </header>
+    <h1 class="form-title">Crop Yield Optimization Model</h1>
+    <div class="const">
+      
+    <div class="container">
+      <h2 id="calhead">Search Your Best Crop</h2>
+      <form action="#" class="form-field">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Temperature</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Eg. 32 deg celsius"/>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Rainfall</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Eg. 200mm"/> 
+          </div>
+          <div class="user-input-box">
+            <label for="email">Humidity</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Eg. 82.32(%)"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Ph</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Ph value"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Nitrogen</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter N value"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phosphorous</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter P value"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Potasssium</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter K value"/>
+          </div>
+          
+          
+        </div>
+        <!-- <div class="gender-details-box">
+          <span class="gender-title">Soil</span>
+          <div class="gender-category">
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+          </div>
+        </div> -->
+        <div class="form-submit-btn">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    <div class="divideright">
+      <div class="dividechild">
+      <h2>Seasonal Crops</h2>
+      <p>There are three distinct crop seasons in India, namely Kharif, Rabi and Zaid. The Kharif season started with Southwest Monsoon under which the cultivation of tropical crops such as rice, cotton, jute, jowar, bajra and tur are cultivated.</p>
+    </div>
+    <div class="dividechild1">
+      <h2 id="aval">Available Crops</h2>
+      <p>Major crops grown in India are rice, wheat, millets, pulses, tea, coffee, sugarcane, oil seeds, cotton and jute, etc. of canal irrigation and tubewells have made it possible to grow rice in areas of less rainfall such as Punjab, Haryana and western Uttar Pradesh and parts of Rajasthan.</p>
+    </div>
+  </div>
+  </div>
+<footer>
+  <p id="foot">COMPANY RIGHT <br>  Copyright &copy <br>Twitter <br>Facebook <br>Instagram</p>
+</footer>
+  </body>
+</html>

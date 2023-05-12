@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Summary</title>
+
+    <style>
+        body {
+
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+        tr th {
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+    </style>
+    <!-- <script>
+        function resetCrop() {
+          document.getElementById("crop").selectedIndex = 0;
+        }
+      </script> -->
+      
+</head>
+
+<body>
+    <h1>Crop Summary</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="crop">Select Crop:</label>
+        <select name="crop" id="crop">
+            {% for crop in crops %}
+            <option value="{{ crop }}">{{ crop }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+        
+    </form>
+   
+    <!-- <form method="POST" onsubmit="resetCrop()">
+        <button type="reset">Reset</button>
+    </form> -->
+    {% if crop_selected %}
+    <h2>Statistics for {{ crop_selected }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Minimum</th>
+                <th>Average</th>
+                <th>Maximum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nitrogen</td>
+                <td>{{ nitrogen_min }}</td>
+                <td>{{ nitrogen_avg }}</td>
+                <td>{{ nitrogen_max }}</td>
+            </tr>
+            <tr>
+                <td>Phosphorous</td>
+                <td>{{ phosphorous_min }}</td>
+                <td>{{ phosphorous_avg }}</td>
+                <td>{{ phosphorous_max }}</td>
+            </tr>
+            <tr>
+                <td>Potassium</td>
+                <td>{{ potassium_min }}</td>
+                <td>{{ potassium_avg }}</td>
+                <td>{{ potassium_max }}</td>
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>{{ temperature_min }}</td>
+                <td>{{ temperature_avg }}</td>
+                <td>{{ temperature_max }}</td>
+            </tr>
+            <tr>
+                <td>Rainfall</td>
+                <td>{{ rainfall_min }}</td>
+                <td>{{ rainfall_avg }}</td>
+                <td>{{ rainfall_max }}</td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td>{{ humidity_min }}</td>
+                <td>{{ humidity_avg }}</td>
+                <td>{{ humidity_max }}</td>
+            </tr>
+            <tr>
+                <td>pH</td>
+                <td>{{ ph_min }}</td>
+                <td>{{ ph_avg }}</td>
+                <td>{{ ph_max }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+   
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djangos work</title>
+   
+
+    
+    <!-- <link rel="stylesheet" href="./../static/css/styles.css"> -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- ./../static/css/styles.css -->
+    <style>
+        h1{
+            color: blue;
+            background-color: #fff;
+            
+            
+        }
+        /* input{
+    width: 60vw;
+    height: 30px;
+} */
+    </style>
+</head>
+<body>
+    <h1>You always deserve better cuz of your hard work!</h1>
+    <hr>
+    <form action="user">
+        <input type="number" step="0.01" placeholder="Nitrogen eg. 60" ><br><br>
+        <input type="number" step="0.01" placeholder="Phosphores eg. 50" ><br><br>
+        <input type="number" step="0.01" placeholder="Potassium eg. 40" ><br><br>
+        <input type="number" step="0.01" placeholder="Temperature eg. 25" ><br><br>
+        <input type="number" step="0.01" placeholder="Humidity eg. 80 " ><br><br>
+        <input type="number" step="0.01" placeholder="pH value 7" ><br><br>
+        <input type="number" step="0.01" placeholder="Enter Rainfall eg. 200" ><br><br>
+         <input class="btn" type="submit">
+    </form>
+    
+</body>
+</html>

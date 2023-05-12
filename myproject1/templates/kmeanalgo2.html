@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>K-Means Clustering Results</title>
+</head>
+<style>
+    h1 {
+        color: brown;
+    }
+
+    body {
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    td{
+        color: blueviolet;
+    }
+</style>
+
+<body>
+    <h1>K-Means Clustering Results</h1>
+    {% if cluster_results %}
+    <table>
+        <tr>
+            <th>Cluster</th>
+            <th>Crops</th>
+        </tr>
+        {% for cluster, crops in cluster_results.items %}
+        <tr>
+            <td>{{ cluster }}</td>
+            <td>
+                <ul>
+                    {% for crop in crops %}
+                    {{ crop }} ,
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No cluster results found</p>
+    {% endif %}
+</body>
+
+</html>

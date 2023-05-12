@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Helvetica Neue, Helvetica Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .div1 {
+            
+            color: rgb(1, 1, 1);
+            /* position: relative; */
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            height: 30vh;
+
+            font-family: Helvetica Neue, Helvetica Arial, sans-serif;
+            padding-left: 30%;
+            background-color: rgb(255, 254, 254);
+
+            font-size: 30px;
+
+        }
+        .form-submit-btn {
+            color: rgb(247, 45, 136);
+            /* position: relative; */
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            height: 20vh;
+
+            font-family: Helvetica Neue, Helvetica Arial, sans-serif;
+            padding-left: 30%;
+            /* background-color: antiquewhite; */
+
+            font-size: 30px;
+
+        }
+
+        h1 {
+            color: black;
+            background-color: rgb(255, 255, 255);
+            /* box-shadow: 8px 8px 5px rgba(245, 242, 242, 0.993); */
+            /* color: rgb(251, 251, 251); */
+            /* background-color:  rgb(247, 45, 136); */
+            padding-left: 3%;
+            /* box-shadow: 8px 8px 5px rgb(103, 97, 97); */
+            padding-right: 10%;
+            margin-right: 58%;
+            text-transform: capitalize;
+
+        }
+ 
+
+        body {
+            
+           background-color: white;
+           position: relative;
+            
+         } 
+         .below{
+            /* background-image: url('https://source.unsplash.com/1600x900/?{{ans}}'); */
+            /* background-size: cover;  */
+            /* background-repeat: no-repeat;
+            background-position: center center; */
+             /* background-size: contain; */
+             height: 60vh;
+             width: 70vw;
+             position: relative;
+             bottom: 0;
+         }
+    .form-submit-btn{
+    margin-top: 40px;
+    margin-left: 5vw;
+    margin-right: 10vw;
+   
+}
+
+.form-submit-btn input{
+    margin-bottom: 1vh;
+    display: block;
+    width: 15vw;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    align-content: center;
+    border-radius: 3px;
+    color: white;
+    background: #ea4c89;
+    box-shadow: 8px 8px 5px rgb(103, 97, 97);
+}
+
+.form-submit-btn input:hover{
+    color: var(--white);
+    background: var(--red);
+    /* font-size: 25px; */
+}
+       
+    </style>
+</head>
+
+<body>
+    <div class="div1">Suitable crop for your land is <h1>{{ans}}</h1>
+    </div>
+    <form action="{% url 'home' %}"  class="form-submit-btn">
+        <input   class="btn"   value="QUERY RESULT">
+        
+        <!-- <input type="submit" value="Submit"> -->
+</form>
+
+</body>
+
+</html>

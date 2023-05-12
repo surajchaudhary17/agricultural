@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="{% static 'css/practice6.css' %}">
+
+</head>
+<style>
+    #calhead1{
+        margin-left: 180px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .graph1{
+        height: 900px;
+    }
+</style>
+
+<body>
+    <header class="para" id="myHeader">
+        <ul>
+            <li>Home</li>
+            <li>Status</li>
+            <li>Code</li>
+            <li>Compete</li>
+            <li>Search</li>
+            <input type="search" name="search" id="searchbar" placeholder="  Search here..">
+        </ul>
+
+    </header>
+    <h1 class="form-title">Crop Yield Optimization Model</h1>
+    <div class="const">
+
+        <div class="container">
+            <h2 id="calhead">Search For Best Crop</h2>
+            <form action="{% url 'result' %}" class="form-field">
+                <div class="main-user-info">
+                    <div class="user-input-box">
+                        <label for="phoneNumber">Nitrogen</label>
+                        <input type="number" step="0.01" required name="N" placeholder="Nitrogen eg. 60" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="phoneNumber">Phosphorous</label>
+                        <input type="number" step="0.01" required name="P" placeholder="Phosphores eg. 50" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="phoneNumber">Potasssium</label>
+                        <input type="number" step="0.01" required name="K" placeholder="Potassium eg. 40" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="fullName">Temperature</label>
+                        <input type="number" step="0.01" required name="TEMP" placeholder="Temperature eg. 25" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="email">Humidity</label>
+                        <input type="number" step="0.01" required name="HUMIDITY" placeholder="Humidity eg. 80" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="phoneNumber">pH</label>
+                        <input type="number" step="0.01" required name="PH" placeholder="pH value eg. 7" />
+                    </div>
+                    <div class="user-input-box">
+                        <label for="username">Rainfall</label>
+                        <input type="number" step="0.01" required name="RAINFALL" placeholder="Rainfall eg. 200" />
+                    </div>
+                </div>
+                <!-- <div class="gender-details-box">
+            <span class="gender-title">Soil</span>
+            <div class="gender-category">
+              <input type="radio" name="gender" id="male">
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="female">
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="other">
+              <label for="other">Other</label>
+            </div>
+          </div> -->
+                <div class="form-submit-btn">
+                    <input class="btn" type="submit">
+                    <!-- <input type="submit" value="Submit"> -->
+                </div>
+            </form>
+        </div>
+        <div class="divideright">
+            <div class="dividechild">
+                <h2>Seasonal Crops</h2>
+                <p>There are three distinct crop seasons in India, namely Kharif, Rabi and Zaid. The Kharif season
+                    started with Southwest Monsoon under which the cultivation of tropical crops such as rice, cotton,
+                    jute, jowar, bajra and tur are cultivated.</p>
+            </div>
+            <div class="dividechild1">
+                <h2 id="aval">Available Crops</h2>
+                <p>Major crops grown in India are rice, wheat, millets, pulses, tea, coffee, sugarcane, oil seeds,
+                    cotton and jute, etc. of canal irrigation and tubewells have made it possible to grow rice in areas
+                    of less rainfall such as Punjab, Haryana and western Uttar Pradesh and parts of Rajasthan.</p>
+            </div>
+        </div>
+    </div>
+    <div class="graph1">
+        <h2 id="calhead1">Crop Distribution Graph</h2>
+        <img src="{{ graph_path }}" alt="My Graph">
+        <p id="para4">Figure 1.0: This graph showing the number of crop needs a particular nutrients in what amount from the selected dataset. </p>
+    </div>
+    <div class="statistic">
+        <h2 id="calhead1">Graph Statistic for requirement</h2>
+        <form action="{% url 'summary4' %}"  class="form-submit-btn">
+            <input class="btn" type="submit" value="SEE RESULT" >
+            <!-- <input type="submit" value="Submit"> -->
+    </form>
+    </div>
+    <div class="statistic">
+        <h2 id="calhead1"> K-Mean Clustering Algorithm</h2>
+        <form action="{% url 'kmeanAlgo' %}"  class="form-submit-btn"> 
+            <!-- the url matches name remember instead of url string in urls.py file of app-->
+            <input class="btn" type="submit" value="SEE RESULT" >
+            <!-- <input type="submit" value="Submit"> -->
+    </form>
+    </div>
+    <div class="statistic">
+        <h2 id="calhead1"> Crop Nutrient Comparison</h2>
+        <form action="{% url 'condition' %}"  class="form-submit-btn"> 
+            <!-- the url matches name remember instead of url string in urls.py file of app-->
+            <input class="btn" type="submit" value="SEE RESULT" >
+            <!-- <input type="submit" value="Submit"> -->
+    </form>
+    </div>
+    <footer>
+        <p id="foot">COMPANY RIGHT <br> Copyright &copy <br>Twitter <br>Facebook <br>Instagram</p>
+    </footer>
+
+</body>
+
+</html>
